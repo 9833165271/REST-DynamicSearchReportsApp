@@ -8,6 +8,6 @@ public class PlanResponse {
 	private Integer planId;
 	private String planName;
 	private String planHolderName;
-	private Integer planHolderSsn;
+	private String planHolderSsn;
 	private String planStatus;
 }

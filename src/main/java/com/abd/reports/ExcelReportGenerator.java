@@ -24,14 +24,12 @@ public class ExcelReportGenerator {
 		headerRow.createCell(3).setCellValue("Plan Name");
 		headerRow.createCell(4).setCellValue("Plan Status");
 		
-		for(int i =0; i<=plans.size(); i++) {
+		for(int i=0; i<plans.size(); i++) {
 		    PlanResponse plan = plans.get(i);
 			XSSFRow dataRow = sheet.createRow(i+1);
 			dataRow.createCell(0).setCellValue(plan.getPlanId());
 			dataRow.createCell(1).setCellValue(plan.getPlanHolderName());
-//			cell1.setCellValue(plan.getHolderName());
-			dataRow.createCell(2).setCellValue(plan.getPlanHolderSsn());
-			//cell2.setCellValue(plan.getHolderSsn());
+			dataRow.createCell(2).setCellValue(plan.getPlanHolderSsn()+"");
 			dataRow.createCell(3).setCellValue(plan.getPlanName());
 			dataRow.createCell(4).setCellValue(plan.getPlanStatus());
 		}
@@ -39,6 +37,7 @@ public class ExcelReportGenerator {
 		workBook.write(outputStream);
 		workBook.close();
 		outputStream.close();
-		
 	}
 }
+
+
